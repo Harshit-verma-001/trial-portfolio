@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deep Space Portfolio — Autonomous AI & Software Developer</title>
+  <meta name="description" content="Personal deep space telemetry portfolio featuring interactive starfields, 3D planet projects, constellation experience viewer, and 3D skill cloud.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;1,300&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="loading">
+
+  <a class="skip-link" href="#about">Skip to content</a>
+
+  <!-- Deep Space Canvas Background & Vignette -->
+  <canvas id="sky-canvas"></canvas>
+  <div id="sky-fallback"></div>
+  <div class="vignette"></div>
+
+  <!-- Telemetry Preloader Launch Screen -->
+  <div class="preloader" id="preloader">
+    <div class="pre-inner">
+      <p class="pre-mark" id="pre-mark">Alex Vance</p>
+      <div class="pre-rule"><span id="pre-bar-fill"></span></div>
+      <div class="pre-foot">
+        <span class="pre-status" id="pre-status">Systems check</span>
+        <span class="pre-count" id="pre-count">00</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Targeting Reticle Custom Cursor -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="reticle" id="reticle"><i></i><i></i><i></i><i></i></div>
+
+  <div class="scroll-rail"><i></i></div>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <nav class="nav-inner">
+      <a class="logo" href="#top">Alex</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#reports">Reports</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ Hero Section ============ -->
+    <section class="hero-pin" id="hero-pin">
+      <div class="hero-stage">
+        <div class="hero-inner">
+          <div class="hero-tag"><i></i>Personal portfolio</div>
+
+          <div class="hero-name-wrap" id="hero-name-wrap">
+            <h1 class="hero-name" id="hero-name" data-text="Alex Vance"></h1>
+
+            <!-- Floating SVG Satellite orbiting name -->
+            <div class="name-sat" id="name-sat" aria-hidden="true">
+              <svg viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Solar panels -->
+                <rect x="2" y="22" width="30" height="16" rx="1.5" fill="#1e3f8f" stroke="#8fcaff" stroke-width="1.2"/>
+                <line x1="12" y1="22" x2="12" y2="38" stroke="#8fcaff" stroke-width="0.8"/>
+                <line x1="22" y1="22" x2="22" y2="38" stroke="#8fcaff" stroke-width="0.8"/>
+                <rect x="68" y="22" width="30" height="16" rx="1.5" fill="#1e3f8f" stroke="#8fcaff" stroke-width="1.2"/>
+                <line x1="78" y1="22" x2="78" y2="38" stroke="#8fcaff" stroke-width="0.8"/>
+                <line x1="88" y1="22" x2="88" y2="38" stroke="#8fcaff" stroke-width="0.8"/>
+                <!-- Booms -->
+                <line x1="32" y1="30" x2="40" y2="30" stroke="#cddffa" stroke-width="1.6"/>
+                <line x1="60" y1="30" x2="68" y2="30" stroke="#cddffa" stroke-width="1.6"/>
+                <!-- Bus -->
+                <rect x="40" y="20" width="20" height="20" rx="2.5" fill="#dbe6f7" stroke="#ffffff" stroke-width="1.2"/>
+                <rect x="44" y="24" width="12" height="6" rx="1" fill="#3b86ff"/>
+                <!-- Dish -->
+                <ellipse cx="50" cy="14" rx="8" ry="4" fill="#eef4ff" stroke="#ffffff" stroke-width="1"/>
+                <line x1="50" y1="18" x2="50" y2="21" stroke="#ffffff" stroke-width="1.4"/>
+              </svg>
+            </div>
+          </div>
+
+          <p class="hero-sub">AI Systems Engineer &amp; Full-Stack Architect</p>
+
+        </div>
+        <div class="scroll-cue"><span>Scroll</span><i></i></div>
+      </div>
+    </section>
+
+    <!-- ============ About Section ============ -->
+    <section class="section" id="about">
+      <div class="about-grid">
+        <div class="reveal">
+          <div class="porthole-wrap" id="porthole-wrap">
+            <svg class="porthole-arc" viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="50" cy="50" r="48"></circle>
+            </svg>
+            <div class="porthole" id="porthole">
+              <div class="porthole-glass">
+                <img src="img/profile.jpg" alt="Alex Vance avatar" class="me_pic">
+              </div>
+              <span class="porthole-sweep" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-body">
+          <h2 class="section-title reveal" data-delay="1">About Me</h2>
+
+          <div class="record reveal" data-delay="2">
+            <div class="record-row">
+              <span class="record-key">Name</span><span class="record-sep">:</span>
+              <span class="record-val">Alex Vance</span>
+            </div>
+            <div class="record-row">
+              <span class="record-key">Institution</span><span class="record-sep">:</span>
+              <span class="record-val">Stanford University</span>
+            </div>
+            <div class="record-row">
+              <span class="record-key">Degree</span><span class="record-sep">:</span>
+              <span class="record-val">B.S. Computer Science &amp; AI</span>
+            </div>
+            <div class="record-row">
+              <span class="record-key">Focus</span><span class="record-sep">:</span>
+              <span class="record-val">Autonomous Agents, VLMs &amp; WebGL</span>
+            </div>
+            <div class="record-row">
+              <span class="record-key">Status</span><span class="record-sep">:</span>
+              <span class="record-val"><span class="badge-status">AVAILABLE FOR ROLES</span></span>
+            </div>
+            <div class="record-row">
+              <span class="record-key">Interests</span><span class="record-sep">:</span>
+              <span class="record-val">Astronomy, Generative Shader Art, Synthesizers, Chess</span>
+            </div>
+          </div>
+
+          <!-- Social Buttons -->
+          <div class="social-card reveal" data-delay="3">
+            <a href="mailto:alex.vance.dev@example.com" aria-label="Email" title="Send Email">
+              <svg class="stroked" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <path d="m3 7 9 6 9-6"></path>
+              </svg>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub Profile">
+              <svg viewBox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn Profile">
+              <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Projects: Planetary System ============ -->
+    <section class="section" id="projects">
+      <h2 class="section-title reveal" data-delay="1">Projects</h2>
+      <p class="section-subtitle reveal" data-delay="2">Orbital missions and software experiments built across deep tech.</p>
+
+      <div class="system">
+
+        <!-- Planet Card 1 -->
+        <div class="planet-card reveal" data-planet="p-cup"
+             style="--glow:rgba(120,200,90,.45); --size:170px; --fallback:#8a6b52; --ring:#eab308">
+          <div class="planet-slot" data-world="p-cup">
+            <canvas class="planet-canvas" width="170" height="170"></canvas>
+          </div>
+          <p class="planet-name">World Cup Predictor</p>
+          <div class="planet-info">
+            <span class="planet-drop"></span><span class="planet-rule"></span>
+            <div class="planet-readout">
+              <p class="planet-desc">AI-powered Streamlit app predicting match outcomes using Monte Carlo simulations &amp; XGBoost.</p>
+              <button class="planet-cta" onclick="openProjectModal('p-cup')">Launch Mission</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Planet Card 2 -->
+        <div class="planet-card reveal" data-delay="1" data-planet="p-wordle"
+             style="--glow:rgba(160,190,110,.45); --size:132px; --fallback:#5c6b3f;">
+          <div class="planet-slot" data-world="p-wordle">
+            <canvas class="planet-canvas" width="132" height="132"></canvas>
+          </div>
+          <p class="planet-name">Spatial Wordle</p>
+          <div class="planet-info">
+            <span class="planet-drop"></span><span class="planet-rule"></span>
+            <div class="planet-readout">
+              <p class="planet-desc">3D WebGL word puzzle game with reactive sound synthesis and custom word engines.</p>
+              <button class="planet-cta" onclick="openProjectModal('p-wordle')">Launch Mission</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Planet Card 3 -->
+        <div class="planet-card reveal" data-delay="2" data-planet="p-drum"
+             style="--glow:rgba(255,140,120,.45); --size:150px; --fallback:#5a2b30;">
+          <div class="planet-slot" data-world="p-drum">
+            <canvas class="planet-canvas" width="150" height="150"></canvas>
+          </div>
+          <p class="planet-name">Audio Drum Kit</p>
+          <div class="planet-info">
+            <span class="planet-drop"></span><span class="planet-rule"></span>
+            <div class="planet-readout">
+              <p class="planet-desc">Tactile soundboard with animated rhythm-driven feedback &amp; Web Audio API synthesis.</p>
+              <button class="planet-cta" onclick="openProjectModal('p-drum')">Launch Mission</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Planet Card 4 -->
+        <div class="planet-card reveal" data-planet="p-weather"
+             style="--glow:rgba(90,200,255,.5); --size:158px; --fallback:#1b6fa8; --ring:#7fe6ff">
+          <div class="planet-slot" data-world="p-weather">
+            <canvas class="planet-canvas" width="158" height="158"></canvas>
+          </div>
+          <p class="planet-name">Atmospheric Radar</p>
+          <div class="planet-info">
+            <span class="planet-drop"></span><span class="planet-rule"></span>
+            <div class="planet-readout">
+              <p class="planet-desc">Live climate telemetry forecasts and global weather pattern tracking visualizer.</p>
+              <button class="planet-cta" onclick="openProjectModal('p-weather')">Launch Mission</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Planet Card 5 -->
+        <div class="planet-card reveal" data-delay="1" data-planet="p-todo"
+             style="--glow:rgba(150,130,255,.5); --size:126px; --fallback:#8b83c9; --ring:#c4b5fd">
+          <div class="planet-slot" data-world="p-todo">
+            <canvas class="planet-canvas" width="126" height="126"></canvas>
+          </div>
+          <p class="planet-name">Quantum Task Core</p>
+          <div class="planet-info">
+            <span class="planet-drop"></span><span class="planet-rule"></span>
+            <div class="planet-readout">
+              <p class="planet-desc">Ultra-fast keyboard-first task manager with local offline database sync.</p>
+              <button class="planet-cta" onclick="openProjectModal('p-todo')">Launch Mission</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Planet Card 6 -->
+        <div class="planet-card reveal" data-delay="2" data-planet="p-qr"
+             style="--glow:rgba(80,140,255,.45); --size:142px; --fallback:#2a1a22;">
+          <div class="planet-slot" data-world="p-qr">
+            <canvas class="planet-canvas" width="142" height="142"></canvas>
+          </div>
+          <p class="planet-name">Matrix QR Generator</p>
+          <div class="planet-info">
+            <span class="planet-drop"></span><span class="planet-rule"></span>
+            <div class="planet-readout">
+              <p class="planet-desc">High-density encrypted QR code generator with vector export &amp; brand styling.</p>
+              <button class="planet-cta" onclick="openProjectModal('p-qr')">Launch Mission</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ Reports: Deep Space Downlink ============ -->
+    <section class="section" id="reports">
+      <h2 class="section-title reveal" data-delay="1">Reports</h2>
+      <p class="section-subtitle reveal" data-delay="2">Telemetry logs, whitepapers, and architectural telemetry packets.</p>
+
+      <div class="dsn reveal" data-delay="2">
+
+        <div class="dsn-head">
+          <span class="dsn-tag">Deep Space Network</span>
+          <span class="dsn-head-rule"></span>
+          <span class="dsn-status"><i class="dsn-led"></i>Signal lock &middot; 04 packets</span>
+        </div>
+
+        <div class="dsn-list">
+
+          <div class="dsn-row" style="--sig:86%" onclick="openReportModal('Cook Your Books Architecture', 'Team Architecture — Java recipe manager built on MVVM + Hexagonal architecture with shared service boundary across GUI and CLI.', 'DOCX · 18p')">
+            <span class="dsn-id">TX&#8209;001</span>
+            <span class="dsn-body">
+              <span class="dsn-name">Cook Your Books System Report</span>
+              <span class="dsn-desc"><span>Hexagonal MVVM architecture evaluation with shared service layer behind JavaFX GUI &amp; CLI interface.</span></span>
+            </span>
+            <span class="dsn-wave" aria-hidden="true"></span>
+            <span class="dsn-meta">
+              <span class="dsn-sig" aria-hidden="true"><i></i></span>
+              <span class="dsn-fmt">DOCX</span>
+            </span>
+            <span class="dsn-cta">Downlink <i>&#8594;</i></span>
+          </div>
+
+          <div class="dsn-row" style="--sig:64%" onclick="openReportModal('Hexagonal Architecture Diagrams', 'Detailed ADR, pull-request logs, boundary diagrams, and component captures presented for peer review.', 'IMG · 4K')">
+            <span class="dsn-id">TX&#8209;002</span>
+            <span class="dsn-body">
+              <span class="dsn-name">Architecture Diagrams &amp; ADR Board</span>
+              <span class="dsn-desc"><span>High-level architectural decision records, PR audit logs, and interface interaction captures on unified board.</span></span>
+            </span>
+            <span class="dsn-wave" aria-hidden="true"></span>
+            <span class="dsn-meta">
+              <span class="dsn-sig" aria-hidden="true"><i></i></span>
+              <span class="dsn-fmt">IMG</span>
+            </span>
+            <span class="dsn-cta">Downlink <i>&#8594;</i></span>
+          </div>
+
+          <div class="dsn-row" style="--sig:100%" onclick="openReportModal('CSP Shift Scheduler Analysis', 'Constraint Satisfaction Problem solver comparison using soft-constraint cost functions and Nash-stability game search.', 'PDF · 7p')">
+            <span class="dsn-id">TX&#8209;003</span>
+            <span class="dsn-body">
+              <span class="dsn-name">CSP Shift Scheduler Final Paper</span>
+              <span class="dsn-desc"><span>CSP-based shift allocation engine: algorithm bench, cost functions, and hedonic game equilibrium search.</span></span>
+            </span>
+            <span class="dsn-wave" aria-hidden="true"></span>
+            <span class="dsn-meta">
+              <span class="dsn-sig" aria-hidden="true"><i></i></span>
+              <span class="dsn-fmt">PDF &middot; 7p</span>
+            </span>
+            <span class="dsn-cta">Downlink <i>&#8594;</i></span>
+          </div>
+
+          <div class="dsn-row" style="--sig:72%" onclick="openReportModal('Vision Classifier Hyperparameter Evaluation', 'Empirical study on how learning rates, epoch counts, and depth scale classification accuracy and F1 score.', 'PDF · 5p')">
+            <span class="dsn-id">TX&#8209;004</span>
+            <span class="dsn-body">
+              <span class="dsn-name">Vision Neural Network Analysis</span>
+              <span class="dsn-desc"><span>Hyperparameter empirical study mapping learning rates, epoch counts, and network capacity curves.</span></span>
+            </span>
+            <span class="dsn-wave" aria-hidden="true"></span>
+            <span class="dsn-meta">
+              <span class="dsn-sig" aria-hidden="true"><i></i></span>
+              <span class="dsn-fmt">PDF &middot; 5p</span>
+            </span>
+            <span class="dsn-cta">Downlink <i>&#8594;</i></span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Experience: Swipeable Constellations ============ -->
+    <section class="section" id="experience">
+      <h2 class="section-title reveal" data-delay="1">Experience</h2>
+      <p class="section-subtitle reveal" data-delay="2">Stellar career milestones and professional orbits. Use arrows or drag to explore constellations.</p>
+
+      <div class="reveal" data-delay="2">
+        <div class="const-stage" id="const-stage" tabindex="0" role="group"
+             aria-label="Constellation of roles. Use left and right arrow keys to change formation.">
+          
+          <canvas id="const-canvas" class="const-canvas"></canvas>
+
+          <!-- Active Experience Card Overlay -->
+          <div class="const-info-card" id="const-info-card">
+            <h3 class="const-role" id="const-role">AI Engineer Intern</h3>
+            <p class="const-company" id="const-company">OpenAI Research / Deep Mind Lab</p>
+            <span class="const-date" id="const-date">Jun 2025 — Present</span>
+            <p class="const-desc" id="const-desc">Engineered autonomous agent evaluations, optimized LLM function calling latency by 35%, and deployed multimodal vision pipelines.</p>
+            <div class="const-tags" id="const-tags">
+              <span>Python</span><span>PyTorch</span><span>LLM Agents</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="const-head">
+          <button class="const-arrow" id="const-prev" aria-label="Previous constellation">&#8592;</button>
+          <div class="const-title">
+            <p class="const-name" id="const-name">Orion Cluster</p>
+            <p class="const-sub" id="const-sub">1 of 5</p>
+          </div>
+          <button class="const-arrow" id="const-next" aria-label="Next constellation">&#8594;</button>
+        </div>
+        <div class="const-dots" id="const-dots"></div>
+      </div>
+    </section>
+
+    <!-- ============ Skills: 3D Interactive Tag Cloud ============ -->
+    <section class="section" id="skills">
+      <h2 class="section-title reveal" data-delay="1">Skills</h2>
+      <p class="section-subtitle reveal" data-delay="2">Technical arsenal in orbit. Filter by domain or drag to rotate the 3D telemetry sphere.</p>
+
+      <div class="skills-filters" id="skills-filters">
+        <button class="skills-filter active" data-filter="all">All</button>
+        <button class="skills-filter" data-filter="languages"><span class="filter-dot" data-cat="languages"></span>Languages</button>
+        <button class="skills-filter" data-filter="ai"><span class="filter-dot" data-cat="ai"></span>AI / ML</button>
+        <button class="skills-filter" data-filter="robotics"><span class="filter-dot" data-cat="robotics"></span>Robotics &amp; CV</button>
+        <button class="skills-filter" data-filter="webcloud"><span class="filter-dot" data-cat="webcloud"></span>Web, Cloud &amp; Data</button>
+      </div>
+
+      <div class="cloud-stage" id="cloud-stage">
+        <div class="cloud-sphere" id="cloud-sphere">
+          <!-- Languages -->
+          <span class="cloud-tag" data-cat="languages" data-weight="3">Python</span>
+          <span class="cloud-tag" data-cat="languages" data-weight="3">TypeScript</span>
+          <span class="cloud-tag" data-cat="languages" data-weight="2">C++</span>
+          <span class="cloud-tag" data-cat="languages" data-weight="2">Java</span>
+          <span class="cloud-tag" data-cat="languages" data-weight="2">SQL</span>
+          <span class="cloud-tag" data-cat="languages" data-weight="1">Rust</span>
+          <span class="cloud-tag" data-cat="languages" data-weight="1">HTML5/CSS3</span>
+
+          <!-- AI / ML -->
+          <span class="cloud-tag" data-cat="ai" data-weight="3">LLM Orchestration</span>
+          <span class="cloud-tag" data-cat="ai" data-weight="3">PyTorch</span>
+          <span class="cloud-tag" data-cat="ai" data-weight="3">Computer Vision</span>
+          <span class="cloud-tag" data-cat="ai" data-weight="2">Transformer Architecture</span>
+          <span class="cloud-tag" data-cat="ai" data-weight="2">OpenAI / Claude APIs</span>
+          <span class="cloud-tag" data-cat="ai" data-weight="2">scikit-learn</span>
+          <span class="cloud-tag" data-cat="ai" data-weight="1">Neural Networks</span>
+          <span class="cloud-tag" data-cat="ai" data-weight="1">RAG Systems</span>
+
+          <!-- Robotics & CV -->
+          <span class="cloud-tag" data-cat="robotics" data-weight="3">OpenCV</span>
+          <span class="cloud-tag" data-cat="robotics" data-weight="3">ROS2 / Robotics</span>
+          <span class="cloud-tag" data-cat="robotics" data-weight="2">MediaPipe</span>
+          <span class="cloud-tag" data-cat="robotics" data-weight="2">Intel RealSense</span>
+          <span class="cloud-tag" data-cat="robotics" data-weight="1">SLAM Navigation</span>
+
+          <!-- Web & Cloud -->
+          <span class="cloud-tag" data-cat="webcloud" data-weight="3">React / Next.js</span>
+          <span class="cloud-tag" data-cat="webcloud" data-weight="3">Three.js / WebGL</span>
+          <span class="cloud-tag" data-cat="webcloud" data-weight="2">AWS / Cloudflare</span>
+          <span class="cloud-tag" data-cat="webcloud" data-weight="2">Docker / K8s</span>
+          <span class="cloud-tag" data-cat="webcloud" data-weight="2">FastAPI / Flask</span>
+          <span class="cloud-tag" data-cat="webcloud" data-weight="1">PostgreSQL</span>
+        </div>
+      </div>
+      <p class="cloud-hint">Drag to spin sphere</p>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-meta">&copy; 2026 Alex Vance &middot; Deep Space Telemetry Architecture</p>
+      <a href="#top" class="back-top">Back to top &#8593;</a>
+    </div>
+  </footer>
+
+  <!-- Interactive Project / Report Detail Modal -->
+  <div class="modal-backdrop" id="modal-backdrop" onclick="closeModal(event)">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <div class="modal-header">
+        <span class="modal-badge" id="modal-badge">MISSION TELEMETRY</span>
+        <h2 class="modal-title" id="modal-title">Project Title</h2>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <p>Project details will appear here...</p>
+      </div>
+      <div class="modal-footer" id="modal-footer">
+        <button class="modal-btn secondary" onclick="closeModal()">Close</button>
+        <a href="#" target="_blank" id="modal-link" class="modal-btn primary">Open Live Mission</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
